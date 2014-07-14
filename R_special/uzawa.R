@@ -56,7 +56,7 @@ for ( i in 1:n ) {
 A<-Matrix( 0, n, n )
 A<-diag( e )
 R<-Matrix( runif( n * n ), n, n )
-A<-A + 0.01 * t(R) %*% R
+A<-A + 0.001 * t(R) %*% R
 r<-2.5
 
 # Equality restriccions
@@ -81,7 +81,13 @@ c<-FALSE
 
 result<-uzawa_method( nn, e1, e2, a, b, u0, p0, J, F, c )
 
-sum( result$u )
+X11()
+plot( colSums( result$U ), col = 'red4', cex = 0.7, main = 'Proportion constraint evolution',
+      xlab = 'i', ylab = expression( sum( u[i], i == 1, n ) ) )
+X11()
+E<-as.vector( t(e) %*% result$U )
+plot( E, col = 'red4', cex = 0.7, main = 'Expectation constraint evolution',
+      xlab = 'i', ylab = expression( sum( u[i]*ER[i], i == 1, n ) ))
 
 #___________________________________________________________________________________________________
 # F<-function(u) { 
