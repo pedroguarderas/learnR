@@ -22,7 +22,7 @@ k<-1
 B<-data.frame()
 E2<-data.frame()
 C<-data.frame()
-while( k <= M) {
+while( k <= M ) {
   X<-matrix( runif( 2 * n ), n, 2 )
   e<-rnorm( n, 0, s )
   D<-data.frame( Y = X %*% b + b0 + e, X1 = X[,1], X2 = X[,2] )
