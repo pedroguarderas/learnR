@@ -41,8 +41,8 @@ wx<-colSums( WX )
 x<-colMeans( X )
 
 # Value of the variance
-vared<-var( x ) / var( wx )
-message( paste( 'Reduccion de varianza: ', vared, sep = '' ) )
+vared<-1 - var( wx ) / var( x )
+message( paste( 'Percentaje of variance reduccion: ', vared, sep = '' ) )
 
 #___________________________________________________________________________________________________
 # Plots
