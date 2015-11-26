@@ -51,11 +51,11 @@ plot( S$values, col = 'red', pch = 16, cex = 0.7 )
 
 m<-6
 cols<-sample( colors()[ grepl('magenta', colors() ) | 
-                          grepl('grey', colors() ) ], m )
+                        grepl('grey', colors() ) ], m )
 X11()
 plot( x, S$vectors[,n]^2, type = 'l', col = cols[1] )
 for ( i in (n-1):(n-m+1) ) {
-  points( x, S$vectors[,i]^2, type = 'l', col = cols[n-i] )
+  points( x, S$vectors[,i]^2, type = 'l', col = cols[n-i+1] )
 }
 
 # Checking normalization
