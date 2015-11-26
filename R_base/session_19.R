@@ -12,6 +12,7 @@
 
 # __________________________________________________________________________________________________
 # Solving Schrödinger radial equation for the hydrogen atom
+# Discretization in Bohr radius
 R<-25
 r<-0
 n<-1000
@@ -37,10 +38,13 @@ me<-9.10938356e-31
 mp<-1.6726219e-27
 mr<-mp*me / ( mp + me )
 k<-me/mr
+# Hamiltonian definition
 H<-0.5 * k * L - V
+# Solving problem
 S<-eigen( H, symmetric = TRUE )
 
-
+#___________________________________________________________________________________________________
+# Plots
 X11()
 plot( S$values, col = 'red', pch = 16, cex = 0.7 )
 
@@ -54,4 +58,5 @@ for ( i in (n-1):(n-m+1) ) {
   points( x, S$vectors[,i]^2, type = 'l', col = cols[n-i] )
 }
 
+# Checking normalization
 summary( colSums( S$vectors^2 ) )
