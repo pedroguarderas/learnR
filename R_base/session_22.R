@@ -42,7 +42,7 @@ M<-1000
 D<-NULL
 for ( j in 1:M ) {
   W<-cumsum( c( 0, sqrt( diff( time ) ) * rnorm( N - 1 ) ) )
-  St<-S * exp( sigma * W + ( r - 0.5 * (sigma^2) ) * time )
+  St<-S * exp( sigma * ( W - W[1] ) + ( r - 0.5 * (sigma^2) ) * ( time - time[1] ) )
   D<-c( D, St[N] )
 }
 
