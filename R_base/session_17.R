@@ -67,7 +67,7 @@ ymax<-(round( max( Y ), 0 ) %/% 10 + 1)*10
 ymin<-(round( min( Y ), 0 ) %/% 10 - 1)*10
 xs<-round( seq( 0, T, T/10 ), 2 )
 ys<-round( seq( ymin, ymax, (ymax-ymin)/10 ), 1 )
-plot( t, Y[,1], ylim = c( ymin, ymax ), type = 'l', lwd = 1, col = cols[1], 
+plot( t, Y[,1], ylim = c( ymin, ymax ), type = 's', lwd = 1, col = cols[1], 
       xlab = 'time t', ylab = 'reserve Y((t,T])', xaxt = 'n', yaxt = 'n', 
       panel.first = { 
         title( main = 'Simulations of Y((t,T]) and E[Y((t,T])]' )
@@ -77,7 +77,7 @@ plot( t, Y[,1], ylim = c( ymin, ymax ), type = 'l', lwd = 1, col = cols[1],
         abline( h = ys, col = 'black', lwd = 1, lty = 3 )
       })
 for ( s in 2:S ) {
-  points( t, Y[,s], type = 'l', lwd = 1, col = cols[s] )
+  points( t, Y[,s], type = 's', lwd = 1, col = cols[s] )
 }
 abline( h = 0, col = 'orange', lwd = 2, lty = 1 )
 points( t, V, type = 'l', lwd = 2, col = 'red2' )
