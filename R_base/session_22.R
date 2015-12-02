@@ -56,3 +56,52 @@ P2<-exp( -r * ( T - t ) ) * mean( P2 )
 
 print( C2 )
 print( P2 )
+
+#___________________________________________________________________________________________________
+# Finite Differences
+library( Matrix )
+
+n<-1000
+m<-500
+XM<-10
+Xm<--10
+
+th<-0.5
+dt<-(T-t)/(m-1)
+dx<-(XM-Xm)/(n-1)
+
+# Discretization first derivative
+D<-Diagonal( n, 0 )
+for ( i in 1:(n-1) ) {
+  D[i,i+1]<- 1
+  D[i+1,i]<- -1
+}
+D<-( ( 0.5 * sigma^2 - r ) / ( 2 * dx ) ) * D
+
+# Discretization second derivative
+L<-Diagonal( n, 2 )
+for ( i in 1:(n-1) ) {
+  L[i,i+1]<- -1
+  L[i+1,i]<- -1
+}
+L<-0.5 * ( ( sigma / dx )^2 ) * L
+
+# Discretization 0 degree term
+R<-Diagonal( n, r )
+
+# Operator discretization
+A<- L + D + R
+I<-Diagonal( n, 1 )
+B<-solve( ( I + th * dt * A ), I )
+A<-B %*% ( I - ( 1 - th ) * dt * A )
+u0<-sapply( exp( Xm + 1:n * dx ) - K, FUN = function( x ) max(x,0) )
+u<-u0
+
+for ( j in 1:m ) {
+  u<-A %*% u
+}
+
+j<-floor((log(S)-Xm)/dx)
+u[j]
+u[j-1]
+u[j+1]
