@@ -26,6 +26,7 @@ z<-rep( 0, N )
 
 X<-as.vector( x )
 
+# Partition function
 Z<-function( N, L, s ) {
   z<-0
   if ( L > 2 * N * s ) {
@@ -38,6 +39,7 @@ rho<-function( k, x, N, L, s ) {
   return( choose( N - 1, k ) * Z( k, x - s, s ) * Z( N - 1 - k, L - x - s, s ) )
 }
 
+# Probability distribution
 p<-function( x, N, L, s ) {
   return( sum( sapply( 0:(N-1), FUN = rho, x, N, L, s )  ) / Z( N, L, s ) ) 
 }
