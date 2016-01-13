@@ -56,4 +56,4 @@ plot( x, pr, col = 'red3', type = 'n', lwd = 3, main = 'Density Asakura Oosawa d
         abline( h = ys, col = 'black', lwd = 1, lty = 3 )
       } )
 hist( X, breaks = 250, freq = FALSE, col = 'steelblue', border = 'steelblue3', add = TRUE )
-points( x, pr, col = 'darkgreen', type = 'l', lwd = 3 )
+points( x, pr, col = 'red4', type = 'l', lwd = 3 )
