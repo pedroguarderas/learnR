@@ -2,7 +2,7 @@
 # 
 # autor: Pedro Guarderas
 # email: ajusworkopensource@gmail.com
-# file: generalizaed_linear_model.R
+# file: kmeans.R
 # 
 # This program is free software; you can redistribute it and/or modify it under the 
 # terms of the GNU General Public License as published by the Free Software Foundation; 
@@ -13,7 +13,7 @@
 # __________________________________________________________________________________________________
 library(reshape2)
 
-distancia<-function( X, d ) {
+distance<-function( X, d ) {
   n<-ncol( X )
   m<-nrow( X )
   
@@ -30,7 +30,7 @@ distancia<-function( X, d ) {
   return( D )
 }
 
-distancia.center<-function( X, C, d ) {
+distance.matrix<-function( X, C, d ) {
   n<-nrow( C )
   m<-nrow( X )
   
@@ -55,7 +55,7 @@ Kmeans<-function( X, d, I = 10, N = 5 ) {
   C<-as.matrix( K[C,] )
   
   for ( i in 1:I ) {
-    D<-distancia.center( X, C, d )
+    D<-distance.matrix( X, C, d )
     K$cluster<-apply( D, 1, FUN = choose.min )
     C<-melt( K, id.vars = 'cluster' )
     C<-aggregate( value ~ cluster + variable, C, mean )
