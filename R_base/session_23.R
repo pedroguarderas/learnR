@@ -37,6 +37,13 @@ cray<-Quandl( "YAHOO/CRAY", type = 'zoo' )
 # AccelorMittal
 mt<-Quandl( "GOOG/NYSE_MT", type = 'zoo' )
 
+# Bananas price
+bn<-Quandl( "ODA/PBANSOP_USD", type = 'zoo' )
+
+iro<-Quandl( "ODA/PIORECR_USD", type = 'zoo' )
+
+ura<-Quandl( "ODA/PURAN_USD", type = 'zoo' )
+
 plot( rtn )
 plot( lmt )
 plot( ba_ )
@@ -47,6 +54,7 @@ plot( nvda )
 plot( tka )
 plot( cray )
 plot( mt )
+plot( bn )
 
 # Ecuador
 # Oil production
@@ -78,3 +86,12 @@ mt_cq<-diff( mt[,1] )
 mt_q<-quantile( mt_cq, probs = 0.99, na.rm = TRUE )[[1]]
 mt_cq<-mt_cq[ mt_cq <= mt_q  & mt_cq >= -mt_q ]
 hist( mt_cq, breaks = 50, probability = TRUE )
+
+dif_iro<-diff( iro[,1] )
+hist( dif_iro, breaks = 50, probability = TRUE )
+
+dif_bn<-diff( bn[,1] )
+hist( dif_bn, breaks = 50, probability = TRUE )
+
+dif_ura<-diff( ura[,1] )
+hist( dif_ura, breaks = 50, probability = TRUE )
