@@ -31,3 +31,8 @@ formatHAFZ( 1100.0005, 3 )
 x<-seq( -10, 10, 0.5 )
 y<-sapply( x,FUN = roundHAFZ, 0 )
 z<-sapply( x,FUN = round, 0 )
+
+cat(x)
+cat(y)
+cat(z)
+
