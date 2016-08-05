@@ -43,7 +43,7 @@ n<-300
 x<-seq( 0,2*pi,length.out = n)
 G<-as.data.frame( t( sapply( x, FUN = g ) ) )
 names( G )<-c('x','y')
-t<-0.24 * 2 * pi
+t<-0.0 * 2 * pi
 X<-g( t )
 c<-C( t )
 r<-R( t )
