@@ -131,5 +131,7 @@ EQ<-function(R,Q,C) {
 }
 
 S<-MLattice( N, U, S0 )
+# Pricing american call
 Ca<-MPrice( S, call, EQ, R, Q, Type = 'A' )
+# Pricing american put
 Pa<-MPrice( S, put, EQ, R, Q, Type = 'A' )
