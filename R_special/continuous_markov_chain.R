@@ -14,7 +14,7 @@
 # Simulation of continuous Markov chain with finite states
 # Instantaneous transition rate structure
 U<-list( list( e = c( 2, 3, 4 ), u = c( 0.01, 0.7, 0.2 ), p = c( 0.01 / 0.91, 0.7 / 0.91, 0.2 / 0.91 ) ), 
-         list( e = NULL, u = NULL, p = NULL ),
+         list( e = NULL, u = 0, p = 1 ),
          list( e = c( 4 ), u = c( 0.8 ), p = c( 0.8 / 0.8 ) ),
          list( e = c( 1, 3 ), u = c( 0.6, 0.3 ), p = c( 0.6 / 0.9, 0.3 / 0.9 ) ) )
 
