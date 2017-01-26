@@ -22,7 +22,7 @@ V<-matrix( rep( 0, n ), 1, n, byrow = TRUE )
 r<-0.04
 b<-c( 10, -4, 3, 8 )
 
-B<-list( list( e = c( 2, 3, 4 ), b = c( 100, -200, 0.04 ) ), 
+B<-list( list( e = c( 2, 3, 4 ), b = c( 1, 2, 0.04 ) ), 
 				 list( e = NULL, b = 0 ),
          list( e = c( 4 ), b = c( 0.05 ) ),
          list( e = c( 1, 3 ), b = c( -0.01, 0.02 ) ) )
