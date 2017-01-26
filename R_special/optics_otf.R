@@ -1,6 +1,6 @@
 # __________________________________________________________________________________________________
 # 
-# autor: Pedro Guarderas
+# author: Pedro Guarderas
 # email: ajusworkopensource@gmail.com
 # file: optic_otf.R
 # 
