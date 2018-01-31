@@ -133,7 +133,7 @@ for ( i in a ) {
 # matriz A con ceros de dimension 2 x 2
 A<-matrix( 0, 2, 2 )
 
-# matriz echa a partir de un vector
+# matriz hecha a partir de un vector
 # se toman el vector y se llena columna por columna
 # el vector debe terner la cantidad de elementos de la matriz esperada
 v<-c(1,0,0,2,1,0) # longitud 6
