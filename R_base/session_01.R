@@ -1,14 +1,14 @@
-# __________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # 
 # autor: Pedro Guarderas
-# email: ajusworkopensource@gmail.com
+# email: pedro.felipe.guarderas@gmail.com
 # file: session_1.R
 # 
 # This program is free software; you can redistribute it and/or modify it under the 
 # terms of the GNU General Public License as published by the Free Software Foundation; 
 # either version 2 of the License, or (at your option) any later version.
-# __________________________________________________________________________________________________
-# 
+# --------------------------------------------------------------------------------------------------
+
 
 # Tutorial básico de R
 # R is un lenguage de programación libre y un entorno para estadística computacional.
@@ -74,7 +74,7 @@ v<-c("A","E","I","O","U")
 # caracter vacío ""
 w<-paste( "A", "B", sep="" )
 
-# ------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------------
 # Comparaciones lógicas
 # Retornan verdadero "TRUE" o falso "FALSE"
 
@@ -104,10 +104,9 @@ a < b
 # mayor o igual
 3 >= 2
 5 >= 5
-a > = b
+a >= b
 
-
-# ------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------------
 # Estructuras de control
 # if
 # si no se satisface la expresión lógica no entra en el if
@@ -136,7 +135,7 @@ for ( i in a ) {
   print( 2*i ) # imprime el valor que toma i multiplicado por 2
 }
 
-# ------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------------
 # matrices
 # matriz A con ceros de dimension 2 x 2
 A<-matrix( 0, 2, 2 )

@@ -1,24 +1,12 @@
-# __________________________________________________________________________________________________
-# 
-# autor: Pedro Guarderas
-# email: ajusworkopensource@gmail.com
-# file: session_6.R
-# 
-# This program is free software; you can redistribute it and/or modify it under the 
-# terms of the GNU General Public License as published by the Free Software Foundation; 
-# either version 2 of the License, or (at your option) any later version.
-# __________________________________________________________________________________________________
-# 
-
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Obtención del lugar de trabajo
 getwd()
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Creando un directorio para guardar datos
 dir.create( path = 'RData' )
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Creando un data.frame para ser guardado
 options( stringsAsFactors = FALSE )
 fchini<-as.Date('2010-10-01')
@@ -35,11 +23,11 @@ save( D, file = 'RData/valores.RData' )
 
 rm( list = ls() )
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Cargando datos guardados
 load( 'RData/valores.RData' )
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Guardando en un archivo separado por comas 
 # Comma separated value "csv"
 dir.create( path = 'reportes' )
@@ -47,7 +35,7 @@ write.csv( D, file = 'reportes/valores.csv' )
 write.csv( D, file = 'reportes/valores.csv', row.names = FALSE )
 write.csv( D, file = 'reportes/valores.csv', row.names = FALSE, na = "" )
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Cargando librería para lectura de archivos excel
 library(xlsx)
 
@@ -82,7 +70,7 @@ gdp$total<-as.numeric( gdp$total )
 gdp$hombres<-as.numeric( gdp$hombres )
 gdp$mujeres<-as.numeric( gdp$mujeres )
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # "Merge" Cruce de datos
 
 # Cruce por país

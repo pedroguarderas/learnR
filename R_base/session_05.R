@@ -1,16 +1,4 @@
-# __________________________________________________________________________________________________
-# 
-# autor: Pedro Guarderas
-# email: ajusworkopensource@gmail.com
-# file: session_5.R
-# 
-# This program is free software; you can redistribute it and/or modify it under the 
-# terms of the GNU General Public License as published by the Free Software Foundation; 
-# either version 2 of the License, or (at your option) any later version.
-# __________________________________________________________________________________________________
-# 
-
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 options( stringsAsFactors = FALSE )
 
 # Cargando archivo RData
@@ -21,7 +9,7 @@ load( 'RData/cruces.RData' )
 # install.packages( 'sqldf' )
 library( sqldf )
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Algunos ejemplos de base de consultas SQL
 # sqldf
 sub_data1<-sqldf( "select * 
@@ -30,7 +18,7 @@ sub_data1<-sqldf( "select *
 # just R
 Rsub_data1<-subset( data, mhratio > 95 )
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # sqldf
 sub_data2<-sqldf( "select * 
                    from data
@@ -39,7 +27,7 @@ sub_data2<-sqldf( "select *
 # just R
 Rsub_data2<-subset( data, mhratio > 95 & grepl( "\\<E", pais  ) )
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # sqldf
 sub_data3<-sqldf( "select year, sum( total ) as sum_total, 
                      avg( mujeres ) as m_mujeres,
@@ -56,7 +44,7 @@ aux<-aggregate( cbind( mujeres, hombres ) ~ year,
                 FUN = mean )
 Rsub_data3<-merge( Rsub_data3, aux, by = c( 'year' ) )
    
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # sqldf
 sub_data4<-sqldf( "select *
                    from gdp

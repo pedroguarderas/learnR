@@ -1,16 +1,4 @@
-# __________________________________________________________________________________________________
-# 
-# autor: Pedro Guarderas
-# email: ajusworkopensource@gmail.com
-# file: session_2.R
-# 
-# This program is free software; you can redistribute it and/or modify it under the 
-# terms of the GNU General Public License as published by the Free Software Foundation; 
-# either version 2 of the License, or (at your option) any later version.
-# __________________________________________________________________________________________________
-# 
-
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Simulación de regresión
 n<-100
 a<-2
@@ -25,7 +13,7 @@ Y<-a * X[,1] + b * X[,2] + e
 ChX<-chol( t(X) %*% X )
 B<-chol2inv( ChX ) %*% t(X) %*% Y
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Tipos de variables en R
 # tipo entero
 x<-seq(0,100,10) # generación de secuencia de 0 hasta el 100 de 10 en 10
@@ -35,13 +23,13 @@ typeof(x)
 x<-as.integer(x)
 typeof(x)
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Tipo double
 x<-seq( -1, 1, length.out = 10 ) # escogiendo longuitud de la secuencia en R
 length(x)
 typeof(x)
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # tipo Date
 x<-as.Date("2014-12-20")
 typeof(x)
@@ -57,7 +45,7 @@ as.numeric(x)
 
 format( x, "%Y") # extrayendo solo el año, como character
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Data frames
 # Es la estructura más utilizada en el tratamiento de datos
 D<-data.frame( x = 1:20, y = seq( -1, 1, length.out = 20 ) )
@@ -128,17 +116,3 @@ complete.cases(D)
 
 # Extracción filas completas
 C<-D[ complete.cases(D), ]
-
-#___________________________________________________________________________________________________
-# Inicio programación estructurada
-# Definición de funciones
-
-cuad<-function( x ) {
-  return( x * x )
-}
-
-# Distribución de probabilidad de Dirichlet, para n variables soble el simplex
-pdfDirichlet<-function( x, a ) {
-  return( (  gamma( sum(a) ) / prod( gamma(a) ) ) * prod( x^(a-1) ) )
-}
-

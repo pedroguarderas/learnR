@@ -1,16 +1,4 @@
-# __________________________________________________________________________________________________
-# 
-# autor: Pedro Guarderas
-# email: ajusworkopensource@gmail.com
-# file: session_22.R
-# 
-# This program is free software; you can redistribute it and/or modify it under the 
-# terms of the GNU General Public License as published by the Free Software Foundation; 
-# either version 2 of the License, or (at your option) any later version.
-# __________________________________________________________________________________________________
-
-
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Black - Scholes option valuation
 
 S<-900 # current price of the underlying stock 
@@ -33,7 +21,7 @@ P<-K * exp( -r * ( T - t ) ) * pnorm( -d2 ) - S * pnorm( -d1 )
 print( C )
 print( P )
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Monte-Carlo method for Black-Scholes
 N<-1000
 time<-seq(t,T,length.out=N)
@@ -57,7 +45,7 @@ P2<-exp( -r * ( T - t ) ) * mean( P2 )
 print( C2 )
 print( P2 )
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Finite Differences
 library( Matrix )
 

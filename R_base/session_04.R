@@ -1,16 +1,4 @@
-# __________________________________________________________________________________________________
-# 
-# autor: Pedro Guarderas
-# email: ajusworkopensource@gmail.com
-# file: session_4.R
-# 
-# This program is free software; you can redistribute it and/or modify it under the 
-# terms of the GNU General Public License as published by the Free Software Foundation; 
-# either version 2 of the License, or (at your option) any later version.
-# __________________________________________________________________________________________________
-# 
-
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Estudio de la desigualdad de Chebyshev P( | X - E[X] | > t ) <= Var[X] / t^2
 m<-1000
 n<-200
@@ -31,7 +19,7 @@ print( 1 - ( pbinom( Ex + t, n, p ) - pbinom( Ex - t, n, p ) ) < n * p * ( 1 - p
 
 rm( list = ls () )
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Ley de los grandes números y muestreo
 e<-0.1
 EX<-0.5
@@ -52,7 +40,7 @@ sum( difE > e ) / m
 
 VX / ( n * e^2 )
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Esperanza condicional condicional
 m<-400
 n<-100

@@ -1,16 +1,4 @@
-# __________________________________________________________________________________________________
-# 
-# autor: Pedro Guarderas
-# email: ajusworkopensource@gmail.com
-# file: session_15.R
-# 
-# This program is free software; you can redistribute it and/or modify it under the 
-# terms of the GNU General Public License as published by the Free Software Foundation; 
-# either version 2 of the License, or (at your option) any later version.
-# __________________________________________________________________________________________________
-
-
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Variance reduction method applied to the standard log-normal distribution
 mlog<-log(1)
 sdlog<-log(exp(1))
@@ -44,7 +32,7 @@ x<-colMeans( X )
 vared<-1 - var( wx ) / var( x )
 message( paste( 'Percentage of variance reduccion: ', vared, sep = '' ) )
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Plots
 layout( matrix( c( 1, 1, 2, 2 ), 2, 2 ) )
 xs<-unique( round( seq( 0, M, 100 ), 0 ) )

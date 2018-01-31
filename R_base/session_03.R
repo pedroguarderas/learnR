@@ -1,23 +1,24 @@
-# __________________________________________________________________________________________________
-# 
-# autor: Pedro Guarderas
-# email: ajusworkopensource@gmail.com
-# file: session_3.R
-# 
-# This program is free software; you can redistribute it and/or modify it under the 
-# terms of the GNU General Public License as published by the Free Software Foundation; 
-# either version 2 of the License, or (at your option) any later version.
-# __________________________________________________________________________________________________
-# 
+# --------------------------------------------------------------------------------------------------
+# Inicio programación estructurada
+# Definición de funciones
 
-#___________________________________________________________________________________________________
+cuad<-function( x ) {
+  return( x * x )
+}
+
+# Distribución de probabilidad de Dirichlet, para n variables soble el simplex
+pdfDirichlet<-function( x, a ) {
+  return( (  gamma( sum(a) ) / prod( gamma(a) ) ) * prod( x^(a-1) ) )
+}
+
+# --------------------------------------------------------------------------------------------------
 # Distribución normal multivariada
 multnorm<-function( x, u, E ) {
   n<-length(x)
-  return( (2*pi)^( -0.5 * n ) ) * sqrt( det(E) ) * exp( -0.5 * t( x - u ) %*% E %*% ( x - u ) ) )
+  return( (2*pi)^( -0.5 * n ) * sqrt( det(E) ) * exp( -0.5 * t( x - u ) %*% E %*% ( x - u ) ) )
 }
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Distribución de pareto
 pareto<-function( x, a, xm ) {
   par<-NULL
@@ -29,7 +30,7 @@ pareto<-function( x, a, xm ) {
   return( par )
 }
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Subsets en data frames
 options( stringsAsFactors = FALSE )
 
@@ -41,7 +42,7 @@ D<-data.frame( nom = sample( c('Andrea','Juan','Luis','María','Daniel'), n, rep
                val = sample( c(1:10,NA), n, replace = TRUE ),
                fch = sample( seqfch, n, replace = TRUE ) )
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Expresiones regulares
 grep( '(ab)', c( 'acb', 'abc', 'aabc', 'acabcb', 'aaac' ) )
 
@@ -58,17 +59,17 @@ grepl( '(María){~5}', c( 'María', 'MaríA', 'MArIA', 'PEDRO' ) )
 # Maching no exacto
 gsub( '(María){~3}', 'MARIA', c( 'María', 'MaríA', 'MArIA', 'PEDRO' ) )
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Aplicación de funciones sobre vectores y data.frames
 prctj<-function( x, fi, ff ) {
   return( as.numeric( x - fi ) / as.numeric( ff - fi ) )
 }
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Función sapply
 D$prctj<-sapply( D$fch, FUN = prctj, fi = fchini, ff = fchfin )
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Función apply
 D<-matrix( rnorm( 40, 2, 1 ), 10, 4 )
 
