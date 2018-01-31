@@ -1,22 +1,11 @@
-# __________________________________________________________________________________________________
-# 
-# author: Pedro Guarderas
-# email: ajusworkopensource@gmail.com
-# file: optic_otf.R
-# 
-# This program is free software; you can redistribute it and/or modify it under the 
-# terms of the GNU General Public License as published by the Free Software Foundation; 
-# either version 2 of the License, or (at your option) any later version.
-# __________________________________________________________________________________________________
-
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 library(RColorBrewer)
 library(rgl)
 
 n<-200
 x<-seq( -1, 1, length.out = n )
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Image function
 If1<-function( x, y ) {
   r<-sqrt( x*x + y * y )
@@ -35,7 +24,7 @@ If2<-function( x, y, k ) {
 
 f<-function( x, y ) If2( x, y, 9.0 )
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Obstructions
 circ<-function( x, y, r ) ifelse( x^2 + y^2 <= r^2, 1.0, 0.0 )
 f1<-function( x, y ) 1e-87 * exp( 100 * ( x^2 + y^2 ) ) * circ( x, y, 1.5 )
@@ -87,7 +76,7 @@ for( i in 1:n ) {
 rm(i,j,k,l,IVF)
 gc()
 
-#___________________________________________________________________________________________________
+# --------------------------------------------------------------------------------------------------
 # Image
 nc<-100
 image( x, x, IF, col = grey.colors( nc, start = 0, end = 1 ) )
@@ -98,5 +87,6 @@ persp3d( x, x, I, col = C, theta = 30, phi = 30, border = NA, alpha = 0.9 )
 
 image( x, x, MTF, col = CL )
 image( x, x, PTF, col = grey.colors( nc, start = 0, end = 1 ) )
+
 # persp3d( x, x, MTF, col = C )
 # persp3d( x, x, PTF, col = C )
