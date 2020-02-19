@@ -1,7 +1,7 @@
-# Examples data.table
+# Examples with data.table
 library( data.table )
 
-# Generating data.table
+# Generating data.table ----------------------------------------------------------------------------
 n <- 100
 m <- 10
 N <- m * n
